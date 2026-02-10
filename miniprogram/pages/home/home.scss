@@ -1,0 +1,65 @@
+/* pages/home/home.wxss */
+/* 顶部标题 */
+.top-title {
+  text-align: center;
+  padding: 104rpx 0 252rpx 0;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+/* 按钮组 */
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+  margin: 0rpx 50rpx;
+  border: #ccc 1rpx solid;
+}
+.btn-item {
+  width: 170rpx;
+  height: 170rpx;
+  margin: 40rpx 36rpx 44rpx 36rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #fff;
+  font-size: 24rpx;
+}
+/* 激活状态的按钮 */
+.btn-item.active {
+  background-color: #FFC898;
+  border-color: #FFA54F;
+  border: 1px solid #eee;
+}
+
+/* 精选推文区域 */
+.post-area {
+  margin: 80rpx 52rpx ;
+}
+.post-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 36rpx;
+}
+.post-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  border: 1px solid #eee;
+  border-radius: 10rpx;
+}
+.post-content {
+  font-size: 28rpx;
+}
+.post-img {
+  width: 120rpx;
+  height: 120rpx;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-img image {
+  width: 80rpx;
+  height: 80rpx;
+}

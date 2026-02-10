@@ -1,0 +1,93 @@
+/* pages/homework/homework.wxss */
+.upload-container {
+  padding: 30rpx;
+}
+
+.upload-btn {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+
+.progress-container {
+  margin-top: 30rpx;
+}
+
+.result-list {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  border-radius: 8rpx;
+}
+
+.result-title {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+  font-weight: 500;
+}
+
+.file-item {
+  padding: 15rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-name {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.file-size {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+}
+
+.file-status.success {
+  font-size: 24rpx;
+  color: #52c41a;
+}
+
+.error-tip {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #f5222d;
+  text-align: center;
+}
+.duration{
+  margin: 50rpx;
+}
+.request{
+  margin: 50rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 100rpx;
+}
+textarea{
+  border: 1rpx solid #d3d3d3;
+  padding: 24rpx;
+}
+.submit{
+  margin: 50rpx;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+}
+.submitLeft{
+  display: flex;
+  flex-direction: row;
+  gap: 26rpx;
+}
+.submitbutton{
+  background-color: #bbbbbb;
+}
+.work{
+  margin: 50rpx;
+  margin-top: 50rpx;
+}

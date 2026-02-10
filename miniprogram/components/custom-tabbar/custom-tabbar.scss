@@ -1,0 +1,36 @@
+/* 自定义tabBar容器 */
+.custom-tabbar {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;    /* 固定在底部 */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120rpx;
+  line-height: 80rpx;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  z-index: 999;       /* 防止被页面内容遮挡 */
+}
+
+/* 单个tab项 */
+.tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* 选中状态 */
+.tab-item.active .tab-text {
+  color: #1677FF;
+  font-weight: bold;
+}
+
+/* tab文字 */
+.tab-text {
+  font-size: 28rpx;
+  color: #666;
+}

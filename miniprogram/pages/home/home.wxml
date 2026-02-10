@@ -1,0 +1,34 @@
+<navigation-bar title="小A创新创业团队" back="{{false}}" color="#fff" background="blue"></navigation-bar>
+<!-- 顶部标题区域 -->
+<view class="top-title">
+  <text>ALways be A！</text>
+</view>
+
+<!-- 按钮区域 -->
+<view class="btn-group">
+  <view class="btn-item active">
+    <text>我要报名</text>
+  </view>
+  <view class="btn-item">
+    <text>我的报名进度</text>
+  </view>
+  <view class="btn-item">
+    <text>团队介绍</text>
+  </view>
+</view>
+
+<!-- 精选推文区域 -->
+<view class="post-area" style="height: 327rpx; display: block; box-sizing: border-box; position: relative; left: 2rpx; top: -27rpx">
+  <text class="post-title">精选推文：</text>
+  <view class="post-card" style="height: 172rpx; display: flex; box-sizing: border-box; position: relative; left: 0rpx; top: 38rpx">
+    <text class="post-content">我是推文标题</text>
+    <view class="post-img">
+      <!-- 占位图（实际项目替换为图片路径） -->
+      <image src="/images/placeholder.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+
+
+<!-- 底部tab栏（已在app.json配置，这里仅展示页面内结构） -->
+<custom-tabbar currentPage="home"></custom-tabbar>

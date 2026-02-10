@@ -1,0 +1,86 @@
+.title{
+  padding: 28rpx;
+  font-size: 36rpx;
+}
+.progressCard{
+  margin: 32rpx;
+  padding: 28rpx;
+  background-color: #efefef;
+}
+.progressCardTop{
+  color: #81b337;
+  font-size: 48rpx;
+  font-weight: 600;
+  margin-bottom: 28rpx;
+}
+.progressCardMiddle{
+  display: flex;
+  flex-direction: row;
+}
+.MiddleLeft{
+  display: flex;
+  align-self: flex-end;
+}
+.workDetail{
+  width: 55rpx;
+}
+.progressCardBottom{
+  margin-top: 28rpx;
+}
+/* 进度流程 */
+.process-container {
+  margin: 0 60rpx 40rpx;
+  position: relative;
+}
+
+.process-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.process-number {
+  width: 56rpx;
+  height: 56rpx;
+  border: 3rpx solid #1677ff;
+  border-radius: 50%;
+  background-color: white;
+  color: #1677ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  margin-right: 24rpx;
+  z-index: 2;
+}
+
+.process-number.inactive {
+  border-color: #999;
+  background-color: #999;
+  color: white;
+}
+
+.process-text {
+  font-size: 30rpx;
+  color: #333;
+  flex: 1;
+}
+
+.process-line {
+  width: 3rpx;
+  background-color: #1677ff;
+  position: absolute;
+  left: 26rpx;
+  top: 56rpx;
+  height: 80rpx;
+  z-index: 1;
+}
+
+.process-item:last-child .process-line {
+  display: none;
+}
+button{
+  background-color: #165dff;
+  color: #fff;
+}

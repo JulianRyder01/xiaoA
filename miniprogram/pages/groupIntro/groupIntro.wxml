@@ -1,0 +1,11 @@
+<navigation-bar title="组别介绍" back="{{false}}" color="#fff" background="blue"></navigation-bar>
+<view class="group">
+<view class="groupImg" style="height: 222rpx; display: block; box-sizing: border-box"></view>
+    <view class="card-footer" style="height: 114rpx; display: flex; box-sizing: border-box">
+      <text class="group-name">运营组</text>
+      <text class="view-intro" bindtap="viewIntro">点击查看介绍</text>
+    </view>
+</view>
+<!-- 在对应的页面 .wxml 文件中添加按钮 -->
+
+<custom-tabbar currentPage="home"></custom-tabbar>

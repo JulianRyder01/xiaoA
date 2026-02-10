@@ -1,0 +1,39 @@
+<!-- 顶部导航栏 -->
+<navigation-bar title="考核进度" back="{{false}}" color="#fff" background="#165dff"></navigation-bar>
+<view class="title">
+考核进度</view>
+<view class="progressCard">
+<view class="progressCardTop">
+寒假训练营
+</view>
+<view class="progressCardMiddle">
+<view class="MiddleLeft">报名组别：前端组</view>
+<button class="workDetail" style="width: 295rpx; display: block; box-sizing: border-box; left: 47rpx; top: 0rpx; position: relative; height: 77rpx">作业详情</button>
+</view>
+<view class="progressCardBottom">
+当前流程开始时间：2024-05-26
+</view>
+</view>
+<view class="process-container">
+    <view class="process-item active">
+      <view class="process-number">1</view>
+      <view class="process-text">已提交报名</view>
+      <button class="detail-btn" bindtap="goToHome" style="position: relative; left: 0rpx; top: 8rpx; width: 283rpx; display: block; box-sizing: border-box">报名详情</button>
+    </view>
+    <view class="process-line"></view>
+    <view class="process-item active">
+      <view class="process-number">2</view>
+      <view class="process-text">寒假训练营</view>
+    </view>
+    <view class="process-line"></view>
+    <view class="process-item">
+      <view class="process-number inactive">3</view>
+      <view class="process-text">一面</view>
+    </view><view class="process-line"></view>
+    <view class="process-item">
+      <view class="process-number inactive">4</view>
+      <view class="process-text">二面</view>
+    </view>
+  </view>
+  <custom-tabbar currentPage="home"></custom-tabbar>
+  

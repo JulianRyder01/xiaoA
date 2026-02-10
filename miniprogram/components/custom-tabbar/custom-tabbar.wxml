@@ -1,0 +1,17 @@
+<view class="custom-tabbar">
+  <!-- 首页 tab -->
+  <navigator 
+    url="/pages/home/home" 
+    class="tab-item {{currentPage === 'home' ? 'active' : ''}}"
+  >
+    <text class="tab-text">首页</text>
+  </navigator>
+
+  <!-- 我的 tab -->
+  <navigator 
+    url="/pages/mine/mine" 
+    class="tab-item {{currentPage === 'mine' ? 'active' : ''}}"
+  >
+    <text class="tab-text">我的</text>
+  </navigator>
+</view>
