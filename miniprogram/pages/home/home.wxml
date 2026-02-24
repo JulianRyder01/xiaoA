@@ -6,13 +6,13 @@
 
 <!-- 按钮区域 -->
 <view class="btn-group">
-  <view class="btn-item active">
+  <view class="btn-item active" bindtap="toApplication">
     <text>我要报名</text>
   </view>
-  <view class="btn-item">
+  <view class="btn-item" bindtap="toProgress">
     <text>我的报名进度</text>
   </view>
-  <view class="btn-item">
+  <view class="btn-item" bindtap="toTeamIntro">
     <text>团队介绍</text>
   </view>
 </view>

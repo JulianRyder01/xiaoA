@@ -1,4 +1,5 @@
-<navigation-bar title="报名详情" back="{{false}}" color="#fff" background="#165dff"></navigation-bar><view class="container">
+<navigation-bar title="报名详情" back="{{true}}" color="#fff" background="#165dff"></navigation-bar>
+<view class="container">
   <form bindsubmit="formSubmit">
     
     <!-- 姓名 -->
@@ -6,37 +7,41 @@
       <text class="label">*姓名</text>
       <input 
         class="input" 
-        name="name" 
+        name="realName" 
         placeholder="请输入姓名" 
         placeholder-class="placeholder"
         maxlength="10"
+        value="{{formData.realName}}"
       />
     </view>
 
     <!-- 性别 -->
     <view class="form-item">
       <text class="label">*性别</text>
-      <radio-group name="gender">
+      <radio-group name="gender" value="{{formData.gender}}">
         <label class="radio-label">
-          <radio value="女" checked/> 女
+          <radio value="1" checked="{{formData.gender === 1}}"/> 女
         </label>
         <label class="radio-label">
-          <radio value="男"/> 男
+          <radio value="2" checked="{{formData.gender === 2}}"/> 男
         </label>
       </radio-group>
     </view>
 
-    <!-- 联系方式 -->
+    <!-- 联系方式（只读，显示登录手机号） -->
     <view class="form-item">
       <text class="label">*联系方式</text>
       <input 
         class="input" 
-        name="contact" 
+        name="phone" 
         placeholder="请输入联系方式" 
         placeholder-class="placeholder"
         type="number"
         maxlength="11"
+        value="{{formData.phone}}"
+        disabled="{{true}}" 
       />
+      <text class="tips">该手机号为您的登录账号，不可修改</text>
     </view>
 
     <!-- 学号 -->
@@ -48,6 +53,7 @@
         placeholder="请输入学号" 
         placeholder-class="placeholder"
         maxlength="12"
+        value="{{formData.studentId}}"
       />
     </view>
 
@@ -88,6 +94,7 @@
         placeholder="请输入专业班级，例X专业X班" 
         placeholder-class="placeholder"
         maxlength="30"
+        value="{{formData.majorClass}}"
       />
     </view>
 
@@ -96,7 +103,7 @@
       <text class="label">*选择组别</text>
       <picker 
         class="picker" 
-        name="group" 
+        name="groupId" 
         range="{{groupList}}" 
         value="{{groupIndex}}" 
         bindchange="bindGroupChange"
@@ -110,17 +117,30 @@
       <text class="label">*个人简介</text>
       <textarea 
         class="textarea" 
-        name="introduction" 
+        name="personalIntroduction" 
         placeholder="请输入个人简介（500字内）" 
         placeholder-class="placeholder"
         maxlength="500"
         bindinput="countWords"
+        value="{{formData.personalIntroduction}}"
       />
       <text class="word-count">{{wordCount}}/500</text>
     </view>
 
-    <!-- 提交按钮 -->
-    <button class="submit-btn" form-type="submit" type="primary">提交</button>
+    <!-- 提交/修改按钮 -->
+    <button 
+      class="submit-btn" 
+      form-type="submit" 
+      type="primary"
+      disabled="{{!hasSubmitted && isPhoneExist}}" 
+    >
+      {{hasSubmitted ? '修改' : '提交'}}
+    </button>
+
+    <!-- 手机号已占用提示 -->
+    <view class="hint-text" wx:if="!hasSubmitted && isPhoneExist">
+      ⚠️ 您的手机号已用于报名，无法重复提交！
+    </view>
 
   </form>
 </view>

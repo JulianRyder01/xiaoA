@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/login/login",
+
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/home",
@@ -8,7 +10,6 @@
     "pages/groupIntro/groupIntro",
     "pages/groupDetailed/groupDetailed",
     "pages/application/application",
-    "pages/login/login",
     "pages/progress/progress",
     "pages/homework/homework",
     "pages/register/register"

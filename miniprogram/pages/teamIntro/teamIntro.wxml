@@ -1,18 +1,29 @@
 <!-- 顶部导航栏 -->
 <navigation-bar title="团队介绍" back="{{false}}" color="#fff" background="blue"></navigation-bar>
-<!-- 轮播图区域 -->
+
+<!-- 轮播图区域（优先用接口返回的轮播图，无则用默认） -->
 <swiper class="banner-swiper" indicator-dots circular>
-  <swiper-item >
-    <view class="banner-item">
-      <!-- 轮播图占位，实际替换为图片路径 -->
-      <image src="/images/team-banner1.png" mode="widthFix"></image>
-    </view>
-  </swiper-item>
-  <swiper-item>
-    <view class="banner-item">
-      <image src="/images/team-banner2.png" mode="widthFix"></image>
-    </view>
-  </swiper-item>
+  <!-- 接口返回的轮播图 -->
+  <block wx:if="{{teamData.imgUrl1 && teamData.imgUrl1.length > 0}}">
+    <swiper-item wx:for="{{teamData.imgUrl1}}" wx:key="index">
+      <view class="banner-item">
+        <image src="{{item}}" mode="widthFix"></image>
+      </view>
+    </swiper-item>
+  </block>
+  <!-- 默认轮播图（接口无数据时显示） -->
+  <block wx:else>
+    <swiper-item>
+      <view class="banner-item">
+        <image src="/images/team-banner1.png" mode="widthFix"></image>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="banner-item">
+        <image src="/images/team-banner2.png" mode="widthFix"></image>
+      </view>
+    </swiper-item>
+  </block>
 </swiper>
 
 <!-- 选项卡区域 -->
@@ -27,18 +38,36 @@
   </view>
 </view>
 
-<!-- 内容区域 -->
+<!-- 内容区域（根据选项卡切换展示不同内容 + 可编辑） -->
 <view class="content-area">
-  <view class="content-title">团队介绍</view>
-  <view class="content-input">
-    <textarea placeholder="请输入" bindinput="onInput"></textarea>
+  <!-- 团队风采标题/内容 -->
+  <view wx:if="{{currentTab === 0}}">
+    <view class="content-title">{{teamData.teamTitle || '团队风采'}}</view>
+    <view class="content-input">
+      <textarea 
+        placeholder="请输入团队风采介绍" 
+        bindinput="onTeamInput"
+        value="{{teamData.teamContent || ''}}"></textarea>
+    </view>
+  </view>
+  <!-- 组别介绍标题/内容 -->
+  <view wx:elif="{{currentTab === 1}}">
+    <view class="content-title">{{teamData.groupTitle || '组别介绍'}}</view>
+    <view class="content-input">
+      <textarea 
+        placeholder="请输入组别介绍内容" 
+        bindinput="onGroupInput"
+        value="{{teamData.groupContent || ''}}"></textarea>
+    </view>
   </view>
 </view>
 
-<!-- 底部图片区域 -->
-<view class="bottom-img" style="width: 616rpx; display: flex; box-sizing: border-box; position: relative; left: 46rpx; top: 27rpx; height: 274rpx">
-  <!-- 底部图片占位，实际替换为图片路径 -->
-  <image src="/images/team-bottom.png" mode="widthFix"></image>
+<!-- 底部图片区域（优化内联样式，改为类名） -->
+<view class="bottom-img">
+  <image src="{{teamData.bottomImg || '/images/team-bottom.png'}}" mode="widthFix"></image>
 </view>
+
+<!-- 保存按钮（可选，用于提交编辑后的内容） -->
+<button class="save-btn" bindtap="saveTeamData" wx:if="{{isSuperAdmin}}">保存修改</button>
 
 <custom-tabbar currentPage="home"></custom-tabbar>
