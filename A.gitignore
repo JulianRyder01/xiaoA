@@ -5,3 +5,9 @@ miniprogram/miniprogram_npm/
 .project.config.json
 .private.config.json
 typings/
+
+# Test coverage
+coverage/
+
+# Package lock
+package-lock.json

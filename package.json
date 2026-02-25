@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "miniprogram-api-typings": "^2.8.3-1"
+    "miniprogram-api-typings": "^2.8.3-1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@vitest/coverage-v8": "^2.1.8",
+    "jsdom": "^26.0.0",
+    "vitest": "^2.1.8"
   }
 }
